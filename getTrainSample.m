@@ -7,7 +7,7 @@ videoNum = 9;
 for i = 1 : videoNum
     videoName = strcat(num2str(i), '.mp4');
     frames = getVideoFrame(videoName); % get the frames gist, then add lables
-    frameLable = ones(size(frames, 1), 1) * videoNum; % n * 1
+    frameLable = ones(size(frames, 1), 1) * i; % n * 1
     if (i == 1) 
         data = frames;
         dataLable = frameLable;
