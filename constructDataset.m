@@ -1,7 +1,7 @@
 function expData = constructData(itrain,label)
 %data:3498*512
 %dataLabel:3498*1
-load 'data.mat';
+load 'dataPCA.mat';
 rand('state',sum(100*clock));
 
 labelNum = 9;
@@ -65,6 +65,6 @@ expData.ltrainLabels = [ones(length(lposIdx),1) ; - ones(length(lnegIdx),1)];
 expData.trainTrueLabels =  trainLabels([lposIdx;lnegIdx],:);
 
 %% data for hash 
-trainNum = 1000;
+trainNum = 100;
 expData.trainNum = trainNum;
 expData.trainData = trainData(:,1:trainNum);

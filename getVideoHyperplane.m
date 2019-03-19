@@ -1,3 +1,4 @@
+clear;
 labelNum = 9;
 itrain = 6;
 

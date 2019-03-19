@@ -10,12 +10,12 @@ param.fc_prefilt = 4;
 % prepare for extracting
 video = VideoReader(fileName);
 extractRate = 1; % how many frames will be extract from 1 second.
-frames = zeros(floor(video.Duration)*extractRate, 512); % to store n*512 Gist matrix
+frames = zeros(floor((floor(video.Duration)-1)/10)*extractRate, 512); % to store n*512 Gist matrix
 framesId = 1;
 
-for i = 1 : floor(video.Duration)
+for i = 1 : floor((floor(video.Duration)-1)/10)
     for j = 1 : extractRate
-        frameId = video.FrameRate * (i - 1) + randi(floor(video.FrameRate));
+        frameId = video.FrameRate * (i - 1) * 10 + randi(floor(video.FrameRate));
         frame = read(video, frameId); % have no idea to do with readFrame
         [frameGist, ~] = LMgist(frame, '', param);
         fprintf('%d frame finish gist \n', i);

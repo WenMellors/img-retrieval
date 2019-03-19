@@ -3,7 +3,7 @@ function [videoModel] = trainHyperplane(expData)
 addpath(genpath('./tool'));
 
 nbits = 16;%  ??? 哈希码的长度
-maxIter = 300;%最大迭代次数
+maxIter = 50;%最大迭代次数
 r = 5;%距离小于5才算有效
 pk = 1; %每次选出一个
 %% training data for svm
@@ -33,7 +33,6 @@ pk = 1; %每次选出一个
 %%
     videoModel = svmtrain(Y, X,'-t 1');
     [label, accuracy, ~] = svmpredict(Y, X, videoModel);
-    save test.mat label
     xsup = full(videoModel.SVs);%SVs
     b = -videoModel.rho;%b
     %求平面w^T x + b = 0的法向量w

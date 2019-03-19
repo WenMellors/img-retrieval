@@ -2,7 +2,9 @@
 % no inputs no outputs. the training sampel will be saved as train_data.mat
 % there are nine videos, each three videos are made by the same up.
 % they are °¢¸£Thomas, Jared and Papi.
+clear;
 videoNum = 9;
+
 
 for i = 1 : videoNum
     videoName = strcat(num2str(i), '.mp4');
@@ -18,4 +20,4 @@ for i = 1 : videoNum
     fprintf('%d finish video extract \n', i);
 end
 
-save data.mat data dataLabel
+save dataPCA.mat data dataLabel
