@@ -7,4 +7,4 @@ k = 128; %Òª½µÎ¬µ½256
 lowvec = min(pcaData);
 upvec = max(pcaData);
 data = scaling(pcaData, lowvec, upvec);
-save dataPCA.mat data
+save dataPCA2.mat data dataLabel

@@ -7,7 +7,7 @@ clear
 param.orientationsPerScale = [8 8 8 8];
 param.numberBlocks = 4;
 param.fc_prefilt = 4;
-picture = imread('D:\BUAA\img-retrieval-master\source\C.jpg');
+picture = imread('D:\BUAA\img-retrieval-master\source\A.jpg');
 [picGist, ~] = LMgist(picture,'D:\BUAA\img-retrieval-master\source\', param);%1*512
 picGist = normr(picGist);
 %clear param
