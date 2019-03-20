@@ -20,4 +20,4 @@ for i = 1 : videoNum
     fprintf('%d finish video extract \n', i);
 end
 
-save dataPCA.mat data dataLabel
+save data.mat data dataLabel

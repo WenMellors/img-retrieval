@@ -15,7 +15,7 @@ framesId = 1;
 
 for i = 1 : floor((floor(video.Duration)-1)/3)
     for j = 1 : extractRate
-        frameId = video.FrameRate * (i - 1) * 10 + randi(floor(video.FrameRate));
+        frameId = video.FrameRate * (i - 1) * 3 + randi(floor(video.FrameRate));
         frame = read(video, frameId); % have no idea to do with readFrame
         [frameGist, ~] = LMgist(frame, '', param);
         fprintf('%d frame finish gist \n', i);
