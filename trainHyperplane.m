@@ -1,10 +1,10 @@
 function [videoModel] = trainHyperplane(expData)
 
-addpath(genpath('./tool'));
+%addpath(genpath('./tool'));
 
-nbits = 16;%  ??? 哈希码的长度
+nbits = 128;%  ??? 哈希码的长度
 maxIter = 50;%最大迭代次数
-r = 5;%距离小于5才算有效
+r = 3;%距离小于5才算有效
 pk = 1; %每次选出一个
 %% training data for svm
     [dim ,ltrainNum] = size(expData.ltrainData);%未标注的数据特征值的维度、个数
